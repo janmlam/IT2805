@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="style.css" rel="stylesheet">
+	<link href="booking.css" rel="stylesheet">
+	<title class="tabTitle">Booking</title>
+	<script src="./modularity/title.js"></script>
+	<link class="favicon" />
+</head>
+<body>
+	
+	<header id="header"></header>
+	<div class="container">
+		<h1>Bestill time</h1>
+		<div class="form">
+			<form id="bookings" name="bookings">
+				<div class="greyBox"> <!-- Exists 3 grey boxes which contains the three different booking stages   -->
+					<div class="row"> <!-- The grey boxes are divided into rows -->
+						<div class="rowBox_one"> <!-- The rows are divided into two or three parts, vertically.  -->
+							Kundeinformasjon
+						</div>
+						<div class="rowBox_two">
+							<p>Fullt navn</p>
+							<input id="fullt_navn" name="name" required type="text">
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							<p>E-postadresse</p>
+							<input id="epost_adr" name="email" type="email" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							<p>Telefonnummer</p>
+							<input id="tlf" name="phone" type="tel" required pattern="[0-9]{8}">
+						</div>
+					</div><br>
+				</div><br>
+				<div class="greyBox">
+					<div class="row">
+						<div class="rowBox_one">
+							Klipp & Style
+						</div>
+						<div class="rowBox_two">
+							<p>Frisør</p>
+							<select class="dropdownMenu_booking" id="booking_stylist" name="Frisør" onchange="changeLocation(this)">
+								<option value="Choose_hairdresser">
+									Velg frisør/stylist
+								</option>
+								<option value="Frida Frisør">
+									Frida Frisør
+								</option>
+								<option value="Cece Sharp">
+									Cece Sharp
+								</option>
+								<option value="Mark Elm">
+									Mark Elm
+								</option>
+								<option value="Erik Swift">
+									Erik Swift
+								</option>
+								<option value="Sander Arntzen">
+									Sander Arntzen
+								</option>
+								<option value="Mathilde Theisen">
+									Mathilde Theisen
+								</option>
+								<option value="Ingrid Øygard">
+									Ingrid Øygard
+								</option>
+								<option value="Louise Bauer">
+									Louise Bauer
+								</option>
+							</select>
+						</div>
+						<div class="rowBox_three">
+							<p>Salong</p>
+							<select class="dropdownMenu_booking" id="booking_location" name="Salong" onchange="autofillStylist(this)" required>
+								<option value="">
+									Velg sted
+								</option>
+								<option value="Solsiden">
+									Solsiden
+								</option>
+								<option value="Oya">
+									Øya
+								</option>
+							</select>
+						</div>
+					</div><br>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							Behandling
+						</div>
+						<div class="rowBox_three"></div>
+					</div>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							Klipp<br>
+					<input class= "check" id="klipp_1" type="checkbox" value="" onclick="updateCost()"> Klipp + vask<br>
+					<input class= "check" id="klipp_2" type="checkbox" value="" onclick="updateCost()"> Stuss<br>
+					<input class= "check" id="klipp_3" type="checkbox" value="" onclick="updateCost()"> Klipp <br>
+				</div>
+				<div class="rowBox_three">
+					Striper<br>
+					<input class= "check" id="striper_1" type="checkbox" value="" onclick="updateCost()"> Foliestripet<br>
+					<input class= "check" id="striper_2" type="checkbox" value="" onclick="updateCost()"> Hettestriper<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="rowBox_one"></div>
+				<div class="rowBox_two"></div>
+				<div class="rowBox_three">
+					Farge<br>
+					<input class= "check" id="farge_1" type="checkbox" value="" onclick="updateCost()"> Farging av ettervekst<br>
+					<input class= "check" id="farge_2" type="checkbox" value="" onclick="updateCost()"> Farge med foliestriper<br>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="rowBox_one"></div>
+				<div class="rowBox_two">
+					<p>Dato</p>
+					<input id="date_booking" name="book_calendar" type="date" required min="" > 
+				</div>
+						<div class="rowBox_three">
+							<p>Tidspunkt</p>
+							<select name="tidspunkt" id="tidspunkt_booking">
+								<option value="09:00">09:00</option>
+								
+								<option value="10:00">10:00</option>
+							
+								<option value="11:00">11:00</option>
+								
+								<option value="12:00">12:00</option>
+							
+								<option value="13:00">13:00</option>
+					
+								<option value="14:00">14:00</option>
+							
+								<option value="15:00">15:00</option>
+						
+								<option value="16:00">16:00</option>
+				
+							</select>
+						</div>
+					</div><br>
+					<br>
+					<br>
+				</div><br>
+				<div class="greyBox">
+					<div class="row">
+						<div class="rowBox_one">
+							Fullfør bestilling
+						</div>
+						<div class="rowBox_two">
+							Pris
+						</div>
+						<div class="rowBox_three"></div>
+					</div>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							<input disabled id="price_booking" name="price_bookpage" type="text" value="">
+						</div>
+						<div class="rowBox_three"></div>
+					</div><br>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two"></div>
+						<div class="rowBox_three"></div>
+					</div><br>
+					<div class="row">
+						<div class="rowBox_one"></div>
+						<div class="rowBox_two">
+							<button id="button_booking" onclick="button_function()">Bekreft bestilling</button>
+						</div>
+						<div class="rowBox_three"></div>
+					</div>
+				</div><br>
+				<br>
+			</form>
+		</div>
+	</div>
+	<footer id="footer"></footer>
+	<script src="./scripts/calculatePrice.js"></script> 
+	<script src="./scripts/validate.js"></script> 
+	<script src="./modularity/footer.js"></script> 
+	<script src="./modularity/header.js"></script>
+	<script src="./scripts/autofill.js"></script>
+	<script src="./modularity/favicon.js"></script>
+</body>
+</html>

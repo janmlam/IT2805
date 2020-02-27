@@ -1,0 +1,29 @@
+#pricelist_table {
+    background-color: #F3F3F3; 
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+}
+
+table {
+    width: 60%;
+    margin-left: 20%;
+}
+
+caption {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+td {
+    line-height: 25px;
+}
+
+td.td1 {
+    width: 70%;
+}
+
+td.td2 {
+    width: 15%;
+}

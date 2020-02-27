@@ -1,0 +1,57 @@
+/* Salon styling */
+.container_salonInformationBox {
+    display: flex;
+}
+.container_salonInformation {
+    width: 40%;
+}
+.image_salon{
+    width: 60%;
+}
+.image_salon img{
+    width:100%;
+}
+.salon_headingStylists{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.salon_containerStylists {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.salon_containerStylists figure{
+    max-width: 25%;
+}
+.salon_containerStylists img{
+    width: 100%;
+    clip-path: circle(45%); 
+}
+.salon_map {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.salon_map iframe{
+    width: 100%;
+}
+
+figcaption {
+	text-align: center;
+}
+
+/* Change flex direction to 'column' for small pages */
+@media only screen and (max-width: 600px) {
+    .container_salonInformationBox {
+        flex-direction: column;
+    }
+    .container_salonInformation, .image_salon {
+        width: 100%;
+    }
+    .salon_containerStylists {
+        flex-direction: column;
+    }
+    .salon_containerStylists figure{
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="no">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" type="text/css" href="homepage.css">
+            <link rel="stylesheet" type="text/css" href="collage.css">
+            <link rel="stylesheet" type="text/css" href="./modularity/carousel.css">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <title class="tabTitle">Hjem</title>
+            <link class="favicon" />
+            <script src="./modularity/title.js"></script>
+        </head>
+    <body>
+        <header id="header"></header>
+    
+        <div class=pink>
+            <img src="img/coverimage.jpg" alt="girl with pink hair">
+            <button onclick="window.location.href='booking.html'" id="order">Bestill time</button>
+        </div>
+        <div id="homepageText">
+            <h5>I en av Trondheims absolutt flotteste frisørsalonger kan du slappe av og la noen av norges fremste frisører ta seg av din frisyre.</h5>
+        </div>
+
+        <div class=container>
+            <div class="grey">
+                <img id="g1" src="img/hair/bw/bw1.jpg" alt="short hair style on woman">
+                <img id="g2" src="img/hair/bw/bw2.jpg" alt="braid hair style on woman">
+                <img id="g3" src="img/hair/bw/bw3.jpg" alt="close up hair style on woman">
+            </div>
+
+            <div class="collage_firstCreation"> 
+                <img src="img/collage/salon1.jpg" alt="chairs in salon"> 
+                <div class="collage_infoBox">
+                    Vi har to salonger i Trondheim. Besøk oss på <a href="salons/solsiden.html">Solsiden</a> og på <a href="salons/oya.html">Øya</a>
+                </div> 
+                <h5 class="collage_infoText_smallScreens">
+                    Vi har to salonger i Trondheim. Besøk oss på <a href="salons/solsiden.html">Solsiden</a> og på <a href="salons/oya.html">Øya</a>
+                </h5>
+            </div>
+
+            <div class="collage_secondCreation"> 
+                <img src="img/collage/salon4.jpg" alt="Image of talking stylist" > 
+                <div class="collage_infoBox">
+                    Siden 2014 har vi stylet våre kunder. <br>
+                    Les mer <a href="about.html">Om oss</a>
+                </div> 
+                <h5 class="collage_infoText_smallScreens">
+                    Siden 2014 har vi stylet våre kunder. <br>
+                    Les mer <a href="about.html">Om oss</a>
+                </h5>
+            </div>      
+        </div>
+        
+        <div id="container_carousel"></div>  
+
+
+    	<footer id="footer"></footer>
+        <script src="modularity/header.js"></script>
+        <script src="./modularity/footer.js"></script> 
+        <script src="modularity/carousel.js"></script>
+        <script src="./scripts/rotateCarousel.js"></script>
+        <script src="./modularity/favicon.js"></script>
+    </body>
+</html>

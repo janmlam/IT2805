@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Hårfin P3 Changes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <article>
+            <header>
+                    <h1>IT2805 Project - P3 Design Changes</h1>
+                    <h3>Group members: Jan, Sander, Louise, Ingrid and Mathilde</h3>
+                    <p>November 10, 2019</p>
+            </header>
+
+            <section>
+                <h3>Administrative Details</h3>
+                <p>
+                    Client name: Hårfin AS<br> 
+                    Contact person: Frida Frisør, CEO at Hårfin AS <br>
+                    Link to our website: <a href="http://folk.ntnu.no/mathilt/IT2805_Project/Documents/p3/homepage.html" target="_blank" >http://folk.ntnu.no/mathilt/IT2805_Project/Documents/p3/homepage.html</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes from P2</h3>
+                <p>Our plan was to create six HTML pages for content, with a common stylesheet, five javascript files for functionality, and three modularity files to avoid duplicating the same code. During the development process, we have made several changes to the project structure and the original style plan. All changes made are described below. </p>
+            </section>
+            
+            <section>
+                <h3>Changes to booking.html</h3>
+                <p>
+                    We made a new javaScript file, ‘calculatePrice.js’, to calculate the price at the moment the user checks/unchecks the checkboxes for the desired service in booking.html. In the original plan we did not add the making of a seperate js file for calculating price. 
+                </p>
+                <p>
+                    Instead of displaying a text under the  ‘Bekreft bestilling’ button, we chose to have a pop-up window which displays a confirmation of time and date of your appointment in a new window. The parent page will refresh and become empty. This will make it clearer that you have managed to complete a booking, and we avoid customers pressing the booking button twice.
+                </p>
+                <p>
+                    We have added a heading to the booking.html page, this to automatically make it clear for the customer what the purpose of the page is.
+                </p>
+                <p>
+                    We have added a dropdown window for choosing time for booking as well as the date. We chose the dropdown instead of input type = time, as it is easier for the stylist to set service times.  
+                </p>
+                <p>
+                    We changed the text of the pop-up to show time + date, instead of weekday + date. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to pricelist.html</h3>
+                <p>
+                    On pricelist, we originally had rounded sides in the box wrapping the price table. We made a decision to change it to a square box, as the other design elements have the square shape and we strive to have a consistent design. 
+                </p>
+                <p>
+                    The original plan was to have empty tables in pricelist.html, and an array with services and prices. When loading the page, we wanted to loop through the array, and print the content in the tables in pricelist.html. This should make the pricelist easy to maintain, with few code changes when updating the content.   <br>
+                    While implementing this, we decided it would be nicer to make the tables in javascript too, so everything would depend on the array. As a result, pricelist.html only contains a div-box, and prices.js will print a number of tables with content. The number of tables created depends on the content in the array is. This makes it easier to update the pricelist-site in the future, because you only need to change the array, and then the tables will be remade based on the new array. 
+                </p>
+                <p>
+                    In order to improve pricelist.html and make it more exclusive, we added the image carousel between the footer and the price table. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to header.js</h3>
+                <p>
+                    Navbar is kind of transparent. 
+                </p>
+                <p>
+                    Originally, titles in the navbar were chosen to have a pink color when hovering over them, to make the title stick out. As we changed the navbar to be more transparent, the pink color became more invisible. Therefore, we added an underline in the navbar, as it makes it more clear to the users when they are hovering over a title. 
+                </p>
+                <p>
+                    We renamed “Hjemmeside” to “Hjem”, as home is a more fitting name on such a link. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to dropdown.js</h3>
+                <p>
+                    Originally planned as an own file, containing the functionality for the dropdown menu when hovering “Våre salonger”. When implementing the navbar it made much more sense to merge this functionality into header.js. As a result, dropdown.js was removed. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to about.html</h3>
+                <p>
+                    From the get go, we wanted to have picture of Frida to scale horizontally with the text about her, but we realized this would be a problem when the width resolution gets too small. With interest of scalability we moved the picture of Frida beneath the text when the width of the users’ medium reaches 1159px. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to collage.part</h3>
+                <p>
+                    After writing the HTML code for the collage.part, we quickly realized it contained too many unique elements to be a modularity file. So instead of the original collage.part, we decided to make the collages as normal HTML-elements included in the homepage.html and about.html
+                </p>
+            </section>
+
+            <section>
+                <h3>Changes to the Image Carousel</h3>
+                <p>
+                    Originally, we planned to have an image carousel included in homepage.html, with a carousel.js file for its functionality. As stated earlier, we decided to have an image carousel on the pricelist.html site as well, and in order to make this implementation smooth, we did several changes:
+                </p>
+                <p>
+                    The carousel.js script file that tells how the carousel should behave, was renamed to rotateCarousel.js
+                </p>
+                <p>
+                    We made a modularity file to avoid copying a lot of HTML code from homepage.html to pricelist.html. Now, the image carousel is created in a carousel.js file located in the modularity folder, and then we import it into homepage.html and pricelist.html.
+                </p>
+                <p>
+                    When the carousel became an own file, we also created an own stylesheet, carousel.css, that also is imported it into homepage.html and pricelist.html. 
+                </p>
+            </section>
+
+            <section>
+                <h3>CSS Changes</h3>
+                <p>
+                    We didn’t take scalability into account during our planning, however with the interest of it we have made some changes to each site to scale to a certain degree. Therefore we decided to make a burger meny when the browser width is less than 800px. As a result, our site is now pretty mobile friendly.
+                </p>
+                <p>
+                    Many small design changes have been made during the development process. We had a design template/design guide, but quickly realised that some font-sizes had to be resized in order to make the website look well. For instance we ended up using px instead of pt, as we want pixel accuracy. When it came to the various headings described in the design template, some of these were slightly changed since we saw that they needed to be altered. 
+                </p>
+                <p>
+                    When it came to visual hierarchy related to the content, we made some changes to the font thickness, sizing and white space. For instance, we made the undertitles bold in the Salon pages. Ensuring popper use of the Gestalt principles for white space and the elements makes a better visual. This is also related to usability as it it easier to scan a page and look for the correct content. 
+                </p>
+                <figure>
+                    <img src="css_before_and_after.png" alt="about.png">
+                    <figcaption>Before and after css changes</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h3>General Changes from P2</h3>
+                <p>
+                    In the interest of getting a structured and intuitive code, with few repeated code lines, we originally decided that the header and footer should have their own script, with some common ids to be used across all sites. This should ensure that we could change our sites accordingly when needed. <br>
+                    When implementing the website, we realised that the same should apply for the tab title and favicon, so we made two more scripts: tilte.js and favicon.js. This change ensures that all tabs have the same title and icon.
+                    In the earlier stages of the project, favicon was forgotten. As a result, we also have added a new image to our project, favicon.png. <br>
+                    Since we use a JavaScript file to add attributes to the favicon <link class="favicon" /> HTML-element, an error occurs when validating the HTML-code. We have tested the site on different browsers on several devices, and we cannot see that this error has a huge impact on our site. We could add all link attributes in every HTML-file, but we would rather change the content in one JavaScript file, than update every file, but get rid of the error. 
+                </p>
+                <p>
+                    After consulting with our student teaching assistant, we came to the conclusion that having one big stylesheet was messy, and long to read. So we decided to create a css file for each respective site. These sites would only have local style changes, while the main style.css had the more general, and common style across the sites. 
+                </p>
+                <p>
+                    Upon further work with the project, we decided to update our folder structure, pictures of the employees was moved a level up since it wasn’t intuitive to have these pictures grouped together with /hair folder. Since Frida, the founder was still an employee of Øya, we decided to move her picture together with the rest of the employees. We have also added an own folder for pictures used in homepage/about. We decided to scale these pictures on the same resolution and apply the same style to each of them, instead of resizing each individually, this also future proofed additional pictures, as long as they have the same resolution. 
+                </p>
+            </section>
+
+            <section>
+                <h3>Minimum requirements</h3>
+                <p>
+                    Ingrid fulfilled her part of the requirements by making the dropdowmenu on “Våre salonger” in the menu
+                </p>
+                <p>
+                    Mathilde fulfilled her part of the requirements by making the image carousel on the homepage
+                </p>
+                <p>
+                    Sander fulfilled his part of the requirements by implementing the automatic array-reader that prints array to table, and he also made the automatic price-calculator on the booking.html 
+                </p>
+                <p>
+                    Jan fulfilled his part of the requirements by implementing the validation of the user input in the booking-html
+                </p>
+                <p>
+                    Louise fulfilled her part of the requirements by making the autofill function that fills in the salon/hairdresser on the booking.html, depending on what the user choose
+                </p>
+            </section>
+
+            <section>
+                <h3>Modularity</h3>
+                <p>
+                    Ingrid was in charge of the header-component, by making a javascript-file, and implement it on the website, while Jan added the hamburger menu functionality in header later
+                </p>
+                <p>
+                    Louise was in charge of the footer-component, by making a javascript-file and implement it on the website
+                </p>
+                <p>
+                    Mathilde was in charge of the title-, carousel- and favicon-component, by making javascript-files and implement them on the website
+                </p>
+            </section>
+
+            <section>
+                <h3>Updated Organizational Scheme</h3>
+                <p>List of files and folders</p>
+                <ul id="filestructure">
+                    <li>homepage.html</li>
+                    <li>homepage.css</li>
+                    <li>about.html</li>
+                    <li>about.css</li>
+                    <li>pricelist.html</li>
+                    <li>pricelist.css</li>
+                    <li>booking.html</li>
+                    <li>booking.css</li>
+                    <li>collage.css</li>
+                    <li>
+                        salons/
+                        <ul>
+                            <li>oya.html</li>	
+                            <li>solsiden.html</li>	
+                            <li>salons.css</li>	
+                        </ul>
+                    </li>
+                    <li>style.css</li>
+                    <li>
+                        scripts/
+                        <ul>
+                            <li>calculatePrice.js</li>	
+                            <li>rotateCarousel.js</li>	
+                            <li>prices.js</li>	
+                            <li>validate.js</li>	
+                            <li>autofill.js</li>	
+                        </ul>
+                    </li>
+                    <li>
+                        modularity/
+                        <ul>
+                            <li>header.js</li>	
+                            <li>footer.js</li>	
+                            <li>title.js</li>	
+                            <li>favicon.js</li>	
+                            <li>carousel.js</li>	
+                            <li>carousel.css</li>	
+                        </ul>
+                    </li>
+                    <li>
+                        img/
+                        <ul>
+                            <li>logo.png</li>	
+                            <li>coverimage.png</li>	
+                            <li>favicon.png</li>		
+                            <li>
+                                hair/
+                                <ul>
+                                    <li>
+                                        carousel/
+                                        <ul>
+                                            <li>boyhaircut.png</li>
+                                            <li>girlback.png</li>
+                                            <li>girlback2.png</li>
+                                            <li>girlback3.png</li>
+                                            <li>girlcurls.png</li>
+                                            <li>girlside.png</li>
+                                            <li>girlside2.png</li>
+                                            <li>wedding.png</li>
+                                            <li>wedding2.png</li>
+                                            <li>wedding3.png</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        bw/
+                                        <ul>
+                                            <li>bw1.png</li>
+                                            <li>bw2.png</li>
+                                            <li>bw3.png</li>
+                                        </ul>
+                                    </li>
+                                </ul>	
+                            </li>	
+                            <li>
+                                employees/
+                                <ul>
+                                    <li>daglig_leder.png</li>
+                                    <li>laerling.png</li>
+                                    <li>stylist.png</li>
+                                    <li>...</li>
+                                    <li>stylist85.png</li>
+                                </ul>
+                            </li>
+                            <li>
+                                salon/
+                                <ul>
+                                    <li>salon1.png</li>
+                                    <li>salon2.png</li>
+                                </ul>
+                            </li>
+                            <li>
+                                collage/
+                                <ul>
+                                    <li>salon1.png</li>
+                                    <li>salon2.png</li>
+                                    <li>salon3.png</li>
+                                    <li>salon4.png</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Final Work Division</h3>
+                <table>
+                    <tr>
+                        <th>File</th>
+                        <th>File description</th>
+                        <th>Responsible</th>
+                    </tr>
+                    <tr>
+                        <td>header.js</td>
+                        <td>The menu bar that is the same for all pages</td>
+                        <td>Ingrid</td>
+                    </tr>
+                    <tr>
+                        <td>footer.js</td>
+                        <td>The footer that is the same for all pages</td>
+                        <td>Louise</td>
+                    </tr>
+                    <tr>
+                        <td>title.js</td>
+                        <td>Updates the tab title on the pages</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>favicon.js</td>
+                        <td>Add favicon to the pages</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>homepage.html</td>
+                        <td>The homepage</td>
+                        <td>Indrid</td>
+                    </tr>
+                    <tr>
+                        <td>homepage.css</td>
+                        <td>Stylesheet for the homepage</td>
+                        <td>Indrid</td>
+                    </tr>
+                    <tr>
+                        <td>about.html</td>
+                        <td>Contains information about the company</td>
+                        <td>Jan</td>
+                    </tr>
+                    <tr>
+                        <td>about.css</td>
+                        <td>Stylesheet for the about us page</td>
+                        <td>Jan</td>
+                    </tr>
+                    <tr>
+                        <td>booking.html</td>
+                        <td>The page for booking an appointment</td>
+                        <td>Louise</td>
+                    </tr>
+                    <tr>
+                        <td>booking.css</td>
+                        <td>Stylesheet for the booking page</td>
+                        <td>Louise</td>
+                    </tr>
+                    <tr>
+                        <td>oya.html</td>
+                        <td>Info about the salon located on Øya</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>solsiden.html</td>
+                        <td>Info about the salon located on Øya</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>salons.css</td>
+                        <td>Stylesheet for the salon pages</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>pricelist.html</td>
+                        <td>Information about prices and services</td>
+                        <td>Sander</td>
+                    </tr>
+                    <tr>
+                        <td>pricelist.css</td>
+                        <td>Stylesheet for the pricelist page</td>
+                        <td>Sander</td>
+                    </tr>
+                    <tr>
+                        <td>style.css</td>
+                        <td>File containing all styling for the website</td>
+                        <td>All</td>
+                    </tr>
+                    <tr>
+                        <td>carousel.js</td>
+                        <td>Function for rotating pictures in the image carousel</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>carousel.css</td>
+                        <td>Stylesheet for the image carousel</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>rotateCarousel.js</td>
+                        <td>Methods for rotating the image carousel</td>
+                        <td>Mathilde</td>
+                    </tr>
+                    <tr>
+                        <td>prices.js</td>
+                        <td>Function that gets the prices from an array, and prints them in the pricelist</td>
+                        <td>Sander</td>
+                    </tr>
+                    <tr>
+                        <td>calculatePrice.js</td>
+                        <td>Function that calculates the price automatically when the user check/uncheck boxes with services</td>
+                        <td>Sander</td>
+                    </tr>
+                    <tr>
+                        <td>validate.js</td>
+                        <td>Function that validates the user input on the booking page</td>
+                        <td>Jan</td>
+                    </tr>
+                    <tr>
+                        <td>autofill.js</td>
+                        <td>Function that autofills salon name when hairdresser is chosen </td>
+                        <td>Louise</td>
+                    </tr>
+                    <tr>
+                        <td>logo.png</td>
+                        <td>Create logo for the header in Illustrator </td>
+                        <td>Ingrid</td>
+                    </tr>
+                </table>
+
+            </section>
+
+
+
+
+
+
+        </article>
+
+
+    </body>
+
+
+    </html>
+    

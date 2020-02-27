@@ -1,0 +1,115 @@
+/* Grey text box */
+.collage_infoBox {
+    background: #F3F3F3;
+    padding: 5% 30px;
+    font-size: 20px;
+}
+.collage_infoBox > .bolded, .collage_infoBox > a {
+    font-weight: bold;
+    font-size: 20px;
+}
+.collage_infoText_smallScreens {
+    display: none;
+}
+.collage_infoText_smallScreens > .bolded, .collage_infoText_smallScreens > a {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* First collage */
+.collage_firstCreation {
+    margin-top:100px;
+    padding-bottom:30px;
+    position: relative;
+    width: 100%;
+    height: 362px;
+    display: flex;
+    align-items: center;
+}
+.collage_firstCreation > img {
+    position: absolute;
+    width: 60%;
+    z-index: -1;
+    right: 0;
+}
+.collage_firstCreation > .collage_infoBox {
+    position: absolute;
+    width: 45%; 
+}
+
+/* Second collage */
+.collage_secondCreation {
+    padding-top:30px;
+    margin-bottom:120px;
+    position: relative;
+    width: 100%;
+    height: 362px;
+    display: flex;
+    align-items: center;
+}
+.collage_secondCreation > img {
+    position: absolute;
+    width: 60%;
+    z-index: -1;
+}
+.collage_secondCreation > .collage_infoBox {
+    position: absolute;
+    width: 45%;
+    right: 0;
+} 
+
+/* Different behavior for different screen sizes */
+@media screen and (max-width: 1600px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 302px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 264px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 226px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 187px;
+        flex-direction: column;
+    }
+    .collage_firstCreation > img, .collage_secondCreation > img {
+        position: relative;
+    }
+    .collage_infoText_smallScreens{
+        display: block;
+    }
+    .collage_infoBox{
+        display: none;
+    }
+    .collage_secondCreation {
+        padding-top:30px;
+        margin-bottom:50px;
+    }
+}
+@media screen and (min-width: 1950px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 400px;
+    }
+}
+@media screen and (min-width: 2100px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 438px;
+    }
+}
+@media screen and (min-width: 2300px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 475px;
+    }
+}
+@media screen and (min-width: 2500px) {
+    .collage_firstCreation, .collage_secondCreation {
+        height: 570px;
+    }
+}

@@ -1,0 +1,28 @@
+#about_containerHistory {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#about_divHistory {
+    max-width: 65%;
+}
+#about_founderImage {
+    min-width: 280px;
+}
+#about_founderImage img {
+    width: 100%;
+    max-width: 280px;
+    clip-path: circle(45%); 
+}
+
+@media only screen and (max-width:1159px) {
+    #about_containerHistory {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #about_divHistory {
+        max-width: 100%;
+    }
+}
+
